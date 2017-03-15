@@ -6,8 +6,7 @@ FROM centos/python-35-centos7
 USER 0
 
 # Enable EPEL repository & install freetds-devel drivers to access MSSQL server
-RUN wget http://dl.fedoraproject.org/pub/epel/7/x86_64/e/epel-release-7-9.noarch.rpm && \
-    rpm -ivh epel-release-7-9.noarch.rpm && \
+RUN yum install -y epel-release && \
     yum install -y freetds-devel && \
     yum clean all -y
 
